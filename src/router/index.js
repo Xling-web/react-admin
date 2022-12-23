@@ -1,28 +1,29 @@
 import { lazy } from 'react'
+import loadComp from '../components/nprogress'
 
 const router = [
   {
     path: '/',
     redirect:"/",
-    component: lazy(() => import('@/layout/index')),
+    component: loadComp(lazy(() => import('@/layout/index'))),
     children:[
       {
         path: '/',
         title:"首页",
         icon:"DesktopOutlined",
-        component: lazy(() => import('@/pages/home')),
+        component: loadComp(lazy(() => import('@/pages/home'))),
       },
       {
         path: '/ceshi',
         title:"测试",
         icon:"ExperimentOutlined",
-        component: lazy(() => import('@/pages/promise')),
+        component: loadComp(lazy(() => import('@/pages/promise'))),
         children:[
           {
             path: '/ceshi/promise',
             title:"测试子",
             icon:"ExperimentOutlined",
-            component: lazy(() => import('@/pages/promise'))
+            component: loadComp(lazy(() => import('@/pages/promise')))
           }
         ]
       },
@@ -30,13 +31,33 @@ const router = [
         path: '/error',
         title:"错误页面",
         icon:"CloseCircleOutlined",
-        component: lazy(() => import('@/pages/error'))
+        component: loadComp(lazy(() => import('@/pages/error'))),
+        children:[
+          {
+            path: '/error/403',
+            title:"403",
+            icon:"CloseCircleOutlined",
+            component: loadComp(lazy(() => import('@/pages/error')))
+          },
+          {
+            path: '/error/404',
+            title:"404",
+            icon:"CloseCircleOutlined",
+            component: loadComp(lazy(() => import('@/pages/error')))
+          },
+          {
+            path: '/error/500',
+            title:"500",
+            icon:"CloseCircleOutlined",
+            component: loadComp(lazy(() => import('@/pages/error')))
+          }
+        ]
       },
     ]
   },
   {
     path: '/login',
-    component: lazy(() => import('@/pages/login'))
+    component: loadComp(lazy(() => import('@/pages/login')))
   }
 ]
 

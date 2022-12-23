@@ -8,13 +8,11 @@ import NProgress from './components/nprogress'
 function App() {
   return (
     <>
-      <Suspense fallback={<NProgress/>}>
         <Routes>
           {
             router.map((router, index) => renderRouter(router, index))
           }
         </Routes>
-      </Suspense>
     </>
   );
 }
