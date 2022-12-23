@@ -1,0 +1,29 @@
+.DefaultLayout{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    .ant-layout-header {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        background-color: white;
+        button{
+            margin: 0 !important;
+        }
+    }
+}
+
+.logo{
+    height: 50px;
+    text-align: center;
+    img{
+        height: 100%;
+        object-fit: contain;
+    }
+    span{
+        display: inline-block;
+        color: white;
+        line-height: 50px;
+        font-size: 15px;
+    }
+}
