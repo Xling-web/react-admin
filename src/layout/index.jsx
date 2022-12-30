@@ -18,7 +18,7 @@ const DefaultLayout = () => {
           <Head/>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
-          <div style={{ padding: 24, background: colorBgContainer }}>
+          <div style={{ padding: 24, background: colorBgContainer,height: '100%' }}>
             <Outlet/>
           </div>
         </Content>

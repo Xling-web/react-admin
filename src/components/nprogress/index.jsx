@@ -16,6 +16,7 @@ const loadComp = (Com) => {
 
 // 进度条
 const NProgress = () => {
+  
   useEffect(() => {
     nprogress.start()
     return () => {

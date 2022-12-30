@@ -28,8 +28,8 @@ const router = [
         ]
       },
       {
-        path: '/error',
-        title:"错误页面",
+        path:"/error",
+        title:"error",
         icon:"CloseCircleOutlined",
         component: loadComp(lazy(() => import('@/pages/error'))),
         children:[

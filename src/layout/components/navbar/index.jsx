@@ -22,7 +22,8 @@ function Navbar (props){
             <Sider collapsed={collapsed}>
                 <div className="logo">
                     <img src={logo} alt="" />
-                    <span>后台管理模板</span>
+                    {!collapsed ? <span>后台管理模板</span> : null}
+                    
                 </div>
                 <Menu
                     theme="dark"
@@ -32,7 +33,7 @@ function Navbar (props){
                     onClick={({ key }) => navigate(key)}
                     onOpenChange={(openKeys)=>{setOpenKeys(openKeys[1])}}
                     items={menuList()}
-                /> 
+                />
             </Sider>
         </>
     )
@@ -40,7 +41,9 @@ function Navbar (props){
 
 // 循环渲染menu列表
 const menuList = () => {
-    let routes = routers[0].children
+    // 过滤掉error页面部分
+    let routes = routers[0].children.filter(v=> {return v.title !== 'error'})
+    
     return routes.map((item,index) => ({
         key:item.path,
         icon: React.createElement(icon[item.icon]),
